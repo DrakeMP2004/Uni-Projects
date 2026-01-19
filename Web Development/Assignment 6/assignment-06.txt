@@ -1,0 +1,139 @@
+// Data Dump from GymDatabase
+// Commands inputted into MongoDB Shell.
+// Shell link in terminal:     mongosh "mongodb+srv://cluster0.9uugh8l.mongodb.net/" --apiVersion 1 --username mackenziepascual2023
+//Password: u230361
+use GymDatabase 
+
+db.gymClasses.insertMany([ 
+
+{ ID: 1, ClassName: "Yoga", ClassDay: "Monday", SessionLength: 2, Price: 20, CurrentNumberOfMembers: 15 }, 
+
+{ ID: 2, ClassName: "Pilates", ClassDay: "Wednesday", SessionLength: 1, Price: 15, CurrentNumberOfMembers: 10 }, 
+
+{ ID: 3, ClassName: "Boxing", ClassDay: "Thursday", SessionLength: 2, Price: 20, CurrentNumberOfMembers: 15 }, 
+
+{ ID: 4, ClassName: "Cycling", ClassDay: "Tuesday", SessionLength: 1, Price: 15, CurrentNumberOfMembers: 12 } 
+
+]) 
+
+
+db.gymMembers.insertMany([ 
+
+{ ID: 3, Title: "Mr", FirstName: "Richard", LastName: "Frances", EmailAddress: "richard@gmail.com", PremiumMembership: false }, 
+
+{ ID: 4, Title: "Ms", FirstName: "Samantha", LastName: "Simpson", EmailAddress: "samantha@outlook.com", PremiumMembership: true }, 
+
+{ ID: 3, Title: "Mr", FirstName: "Richard", LastName: "Frances", EmailAddress: "richard@gmail.com", PremiumMembership: false }, 
+
+{ ID: 4, Title: "Ms", FirstName: "Samantha", LastName: "Simpson", EmailAddress: "samantha@outlook.com", PremiumMembership: true } 
+
+]) 
+
+
+db.memberClasses.insertMany([{ MemberID: 3, ClassIDs: [1, 2, 4]}, { MemberID: 4, ClassIDs: [1, 3, 4]}]); 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Exported JSON files from Studio 3T
+{
+    "_id" : ObjectId("662fe7af25aed95e0a5530c2"),
+    "ID" : NumberInt(1),
+    "Title" : "Mr",
+    "FirstName" : "Jack",
+    "LastName" : "Lynch",
+    "EmailAddress" : "jack@outlook.com",
+    "PremiumMembership" : true
+}
+{
+    "_id" : ObjectId("662fe7af25aed95e0a5530c3"),
+    "ID" : NumberInt(2),
+    "Title" : "Ms",
+    "FirstName" : "Anne",
+    "LastName" : "Marie",
+    "EmailAddress" : "anne@gmail.com",
+    "PremiumMembership" : false
+}
+{
+    "_id" : ObjectId("662fe96f25aed95e0a5530c4"),
+    "ID" : NumberInt(3),
+    "Title" : "Mr",
+    "FirstName" : "Richard",
+    "LastName" : "Frances",
+    "EmailAddress" : "richard@gmail.com",
+    "PremiumMembership" : false
+}
+{
+    "_id" : ObjectId("662fe96f25aed95e0a5530c5"),
+    "ID" : NumberInt(4),
+    "Title" : "Ms",
+    "FirstName" : "Samantha",
+    "LastName" : "Simpson",
+    "EmailAddress" : "samantha@outlook.com",
+    "PremiumMembership" : true
+}
+
+
+
+
+
+
+{
+    "_id" : ObjectId("662fe49525aed95e0a5530c0"),
+    "ID" : NumberInt(1),
+    "ClassName" : "Yoga",
+    "ClassDay" : "Monday",
+    "SessionLength" : NumberInt(2),
+    "Price" : NumberInt(20),
+    "CurrentNumberOfMembers" : NumberInt(15)
+}
+{
+    "_id" : ObjectId("662fe49525aed95e0a5530c1"),
+    "ID" : NumberInt(2),
+    "ClassName" : "Pilates",
+    "ClassDay" : "Wednesday",
+    "SessionLength" : NumberInt(1),
+    "Price" : NumberInt(15),
+    "CurrentNumberOfMembers" : NumberInt(10)
+}
+{
+    "_id" : ObjectId("662feb6725aed95e0a5530c6"),
+    "ID" : NumberInt(3),
+    "ClassName" : "Boxing",
+    "ClassDay" : "Thursday",
+    "SessionLength" : NumberInt(2),
+    "Price" : NumberInt(20),
+    "CurrentNumberOfMembers" : NumberInt(15)
+}
+{
+    "_id" : ObjectId("662feb6725aed95e0a5530c7"),
+    "ID" : NumberInt(4),
+    "ClassName" : "Cycling",
+    "ClassDay" : "Tuesday",
+    "SessionLength" : NumberInt(1),
+    "Price" : NumberInt(15),
+    "CurrentNumberOfMembers" : NumberInt(12)
+}
+
+
+
+
+
+{
+    "_id" : ObjectId("6633a8ed9e600d1d3e7f03a0"),
+    "MemberID" : NumberInt(3),
+    "ClassIDs" : [
+        NumberInt(1),
+        NumberInt(2),
+        NumberInt(4)
+    ]
+}
+{
+    "_id" : ObjectId("6633a8ed9e600d1d3e7f03a1"),
+    "MemberID" : NumberInt(4),
+    "ClassIDs" : [
+        NumberInt(1),
+        NumberInt(3),
+        NumberInt(4)
+    ]
+}
+
