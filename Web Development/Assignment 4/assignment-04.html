@@ -1,0 +1,112 @@
+<!-- Template -->
+<!-- Front-End Application-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Declares character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets the viewport for responsive design -->
+    <title>User Management</title> <!-- Title of the webpage -->
+</head>
+<body>
+    <h1>User Management</h1> <!-- Main heading -->
+
+    <!-- Form for creating a new user -->
+    <h2>Add User</h2>
+    <form id="createUserForm" action="/createUser" method="POST">
+        <!-- Input fields for user details -->
+        <!-- Each input field represents a user attribute -->
+        <input type="text" name="title" placeholder="Title"><br>
+        <input type="text" name="firstName" placeholder="First Name"><br>
+        <input type="text" name="surname" placeholder="Surname"><br>
+        <input type="text" name="mobileNumber" placeholder="Mobile Number"><br>
+        <input type="text" name="emailAddress" placeholder="Email Address"><br>
+        <input type="text" name="addressLine1" placeholder="Address Line 1"><br>
+        <input type="text" name="addressLine2" placeholder="Address Line 2"><br>
+        <input type="text" name="town" placeholder="Town"><br>
+        <input type="text" name="countyOrCity" placeholder="County or City"><br>
+        <input type="text" name="eircode" placeholder="Eircode"><br>
+        <!-- Button to submit the form -->
+        <button type="submit">Create User</button>
+    </form>
+
+    <!-- Form for retrieving users by name -->
+    <h2>Retrieve Users</h2>
+    <form id="retrieveUsersForm">
+        <!-- Input field for entering name to search -->
+        <input type="text" name="name" placeholder="Name to search"><br>
+        <!-- Button to submit the form -->
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Container to display retrieved users -->
+    <div id="userList"></div>
+
+    <!-- JavaScript code for handling form submissions -->
+    <script>
+        // Event listener for form submission to create a new user
+        document.getElementById('createUserForm').addEventListener('submit', async function(event) 
+        {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+            // Get form data
+            const formData = new FormData(this);
+            // Extracting user data from form data
+            const title = formData.get('title');
+            const firstName = formData.get('firstName');
+            const surname = formData.get('surname');
+            const mobileNumber = formData.get('mobileNumber');
+            const emailAddress = formData.get('emailAddress');
+            const addressLine1 = formData.get('addressLine1');
+            const addressLine2 = formData.get('addressLine2');
+            const town = formData.get('town');
+            const countyOrCity = formData.get('countyOrCity');
+            const eircode = formData.get('eircode');
+
+            // Fetch Functions to receive Back-End Request in AJAX from https://www.freecodecamp.org/news/how-to-use-fetch-api/ and https://www.turing.com/blog/javascript-fetch-api-guide/
+            // Send POST request to create user
+            const response = await fetch('http://localhost:8080/createUser', //URL from localhost8080 take from launch.json
+            {
+                method: 'POST',
+                headers: 
+                {
+                    'Content-Type': 'application/json' // Specify content type as JSON
+                },
+                body: JSON.stringify
+                ({ // Convert data to JSON string as demonstrated in https://www.w3schools.com/js/js_json_stringify.asp
+                    title,
+                    firstName,
+                    surname,
+                    mobileNumber,
+                    emailAddress,
+                    addressLine1,
+                    addressLine2,
+                    town,
+                    countyOrCity,
+                    eircode
+                })
+            });
+            // Parse response as JSON
+            const result = await response.json();
+            // Log result to console
+            console.log(result);
+        });
+
+        // Event listener for form submission to retrieve users
+        document.getElementById('retrieveUsersForm').addEventListener('submit', async function(event) 
+        {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+            // Get name to search
+            const name = this.elements['name'].value;
+            // Send GET request to retrieve users
+            const response = await fetch(`http://localhost:8080/retrieveUsers/${name}`);
+            // Parse response as JSON
+            const users = await response.json();
+            // Log retrieved users to console
+            console.log(users);
+            // Display retrieved users in the userList div
+            document.getElementById('userList').innerHTML = JSON.stringify(users);
+        });
+    </script>
+</body>
+</html>
