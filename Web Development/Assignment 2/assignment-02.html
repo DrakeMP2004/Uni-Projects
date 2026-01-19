@@ -1,0 +1,47 @@
+<!-- Heading Template -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment-2</title>
+        <link rel="stylesheet" href="assignment-02.css">
+        <script src="assignment-02.js"></script>
+        <!-- jquery functions if I used it -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Importing Orbitron font -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Importing Power Symbol Font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;display=swap">
+    </head>
+    <body>
+        <!-- Guide to how to start the game -->
+        <div class="guide">
+            <h2>click the power button to start/stop playing Simon</h2>
+        </div>
+        <!-- Set Up the Layout of The Game Interface -->
+        <div id=container>
+            <!-- 4 Color Buttons -->
+            <div class="key" id=greenButton></div>
+            <div class="key" id=redButton></div>
+            <div class="key" id=yellowButton></div>
+            <div class="key" id=blueButton></div>
+            
+            <!-- Center Circle -->
+            <div id=center>
+                <div id=start>
+                    <!-- Simon Body -->
+                    <span id=simon>START</span>
+                    
+                    <!-- Score counter -->
+                    <span id=score>00</span>
+                    <span id="highScore">00</span> <!-- Added high score counter -->
+                    <!-- Start ON/OFF switch -->
+                    <span id=startSwitch onclick=toggleGame()><i class="fa fa-power-off"></i></span>
+                </div>
+            </div>
+        </div>
+        <!-- Display Game Title -->
+        <div class="title">
+            <h2>SIMON SAYS</h2>
+        </div>
+    </body>
+</html>

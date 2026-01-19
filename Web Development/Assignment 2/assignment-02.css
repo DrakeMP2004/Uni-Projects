@@ -1,0 +1,208 @@
+/* Background Body Color */
+body 
+{
+    background-color: purple;
+}
+
+/* Set Up How the Guide Text Looks */
+.guide
+{
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+	font-size: 10px;
+}
+
+/* Main body layout container */
+#container 
+{
+	position:relative;
+	width:440px;
+	height:440px;
+	margin:0 auto;
+	margin-top: 160px;
+	border: solid 10px rgb(255, 255, 255);
+	border-radius: 50%;
+	background-color: rgb(0, 0, 0);
+}
+
+/* Flash Looks When you press the buttons */
+.glow 
+{
+    background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.9));
+}
+
+/* center circle */
+#center 
+{
+	position:absolute;
+	background-color:rgb(0, 0, 0);
+	border: 20px solid rgb(255, 255, 255);
+	width:200px;
+	height:200px;
+	top:100px;
+	left:100px;
+	border-radius:50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* Start Section */
+#start 
+{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+	font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+}
+/* Simon Setup Position at the Center */
+#simon 
+{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Score Viewer */
+#score 
+{
+	position: absolute;
+	padding: 10px 20px;
+	top: 25px;
+	right: -175px; /* Adjust as needed */
+	font-size: 20px;
+	color: black;
+	background-color: #ffffff;
+	border: none;
+	border-radius: 5px;
+}
+/* HighScore Viewer */
+#highScore 
+{
+    position: absolute;
+    padding: 10px 20px;
+    top: 25px;
+    left: -175px; /* Adjust as needed */
+    font-size: 20px;
+    color: black;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Key Body Set all the middle at placed */
+.key 
+{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+}
+
+/* 4 Button Circles */
+#greenButton 
+{
+	top:-80px;
+	left:-80px;
+	background-color:green;
+	border-radius:100%;
+	border: 15px solid black;
+}
+/* Shake Transition if you pressed the button */
+#greenButton:active 
+{
+    transform: translate(1.5%, 1.5%);
+}
+/* Apply the same */
+#redButton
+{
+	top:-80px;
+	right:-80px;
+	background-color:red;
+	border-radius:100%;
+	border: 15px solid black;
+}
+#redButton:active 
+{
+    transform: translate(-1.5%, 1.5%);
+}
+#yellowButton 
+{
+	bottom:-80px;
+	left:-80px;
+	background-color:yellow;
+	border-radius:100%;
+	border: 15px solid black;
+}
+#yellowButton:active 
+{
+    transform: translate(1.5%, -1.5%);
+}
+#blueButton 
+{
+	bottom:-80px;
+	right:-80px;
+	background-color:blue;
+	border-radius:100%;
+	border: 15px solid black;
+}
+#blueButton:active 
+{
+    transform: translate(-1.5%, -1.5%);
+}
+
+/* Opacity/Transparency Reduced when you press any of the 4 bigger circle buttons */
+.key:active 
+{
+    opacity: 0.8;
+}
+
+/* Start ON/OFF switch */
+#startSwitch 
+{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #d00;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    color: #ddd;
+}
+/* Shake Transition when pressed the button up/down at index */
+#startSwitch i 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* When switch is active, change how it looks by making it less transparent and apply tiny shadow */
+#startSwitch:active 
+{
+    opacity: 0.6;
+    box-shadow: 0 0 #333;
+    transform: translate(-50%, calc(-50% + 0.5vw));
+}
+
+/* Main Title Page Header Design */
+.title 
+{
+    text-align: center;
+    margin-top: 100px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+	font-size: 30px;
+}
