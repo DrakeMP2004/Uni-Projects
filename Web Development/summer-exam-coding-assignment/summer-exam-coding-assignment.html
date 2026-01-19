@@ -1,0 +1,576 @@
+<!-- Template -->
+<!-- Frontend UI Solution -->
+<!-- Used HTML/CSS/Javascript with bits of Express -->
+
+<!-- Layout resused from Assignment 4 for frontend layout and Assignment 3 in the HTML file for Table Generations -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ensure proper rendering and touch zooming on mobile devices as I looked in my phone -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Management System</title>
+
+    <!-- Inline CSS for styling tables and their contents -->
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main header for the page -->
+    <h1>Rent Management System</h1>
+    <!-- Section for managing landlords -->
+    <section>
+        <!-- Form for adding a new landlord -->
+        <h2>Post Landlord</h2>
+        <form id="addLandlordForm">
+            <!-- Input fields for landlord details, all required for validation as shown from RestAPI NodeJS program as taken and learnt in https://forum.freecodecamp.org/t/inside-the-form-element-i-am-required-to-enter-my-name-in-a-field-with-id-name/303034/10-->
+            <input type="text" name="title" placeholder="Title" required><br>
+            <input type="text" name="firstName" placeholder="First Name" required><br>
+            <input type="text" name="surname" placeholder="Surname" required><br>
+            <input type="text" name="phoneNumber" placeholder="Phone Number" required><br>
+            <input type="email" name="emailAddress" placeholder="Email Address" required><br>
+            <input type="text" name="addressLine1" placeholder="Address Line 1" required><br>
+            <input type="text" name="town" placeholder="Town" required><br>
+            <input type="text" name="countyCity" placeholder="County/City" required><br>
+            <input type="text" name="eircode" placeholder="Eircode" required><br>
+            <input type="date" name="dateOfBirth" placeholder="Date of Birth" required><br>
+            <!-- Checkbox for additional permissions (layout similarly in https://www.w3schools.com/tags/att_input_type_checkbox.asp)-->
+            <label>
+                Permission to Rent:
+                <input type="checkbox" name="permissionToRent" value="true"> Yes
+            </label><br>
+            <label>
+                Permission for Email:
+                <input type="checkbox" name="permissionForEmail" value="true"> Yes
+            </label><br>
+            <!-- Button to submit the form -->
+            <button type="submit">Add Landlord</button>
+        </form>
+        <!-- Form for fetching a landlord by ID -->
+        <h2>Get Landlord by ID</h2>
+        <form id="getLandlordForm">
+            <input type="text" name="id" placeholder="Enter Landlord ID" required><br>
+            <button type="submit">Get Landlord</button>
+        </form>
+        <!-- Div to display fetched landlord details -->
+        <div id="landlordDetails"></div>
+        <!-- Form for updating a landlord by ID -->
+        <h2>Update Landlord by ID</h2>
+        <form id="updateLandlordForm">
+            <input type="text" name="id" placeholder="Landlord ID" required><br>
+            <input type="text" name="emailAddress" placeholder="New Email Address"><br>
+            <button type="submit">Update Landlord</button>
+        </form>
+        <!-- Form for deleting a landlord by ID -->
+        <h2>Delete Landlord by ID</h2>
+        <form id="deleteLandlordForm">
+            <input type="text" name="id" placeholder="Landlord ID" required><br>
+            <button type="submit">Delete Landlord</button>
+        </form>
+    </section>
+    <!-- Section for displaying a table of landlords -->
+    <section>
+        <h3>Landlords List</h3>
+        <!-- Button to refresh the list of landlords (Do so all the time along with the other tables when you first run the UI) -->
+        <button onclick="fetchLandlords()">Refresh List</button>
+        <table id="landlordsTable">
+        <!-- Create a Table that reveals all contents from MongoDB Database -->
+            <tr>
+                <th>Title</th>
+                <th>First Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+                <th>PermissionToRent</th>
+                <th>PermissionForEmail</th>
+            </tr>
+            <!-- Landlords will be listed here -->
+        </table>
+    </section>
+
+    <!-- Similar Structure to the others -->
+    <!-- Section for managing tenants -->
+    <section>
+        <!-- Form for adding a new tenant -->
+        <h2>Post Tenant</h2>
+        <form id="addTenantForm">
+            <!-- Input fields for tenant details, all required -->
+            <input type="text" name="title" placeholder="Title" required><br>
+            <input type="text" name="firstName" placeholder="First Name" required><br>
+            <input type="text" name="surname" placeholder="Surname" required><br>
+            <input type="text" name="phoneNumber" placeholder="Phone Number" required><br>
+            <input type="email" name="emailAddress" placeholder="Email Address" required><br>
+            <input type="text" name="addressLine1" placeholder="Address Line 1" required><br>
+            <input type="text" name="town" placeholder="Town" required><br>
+            <input type="text" name="countyCity" placeholder="County/City" required><br>
+            <input type="text" name="eircode" placeholder="Eircode" required><br>
+            <!-- Button to submit the form -->
+            <button type="submit">Add Tenant</button>
+        </form>
+        <!-- Form for fetching a tenant by ID -->
+        <h2>Get Tenant by ID</h2>
+        <form id="getTenantForm">
+            <input type="text" name="id" placeholder="Enter Tenant ID" required><br>
+            <button type="submit">Get Tenant</button>
+        </form>
+        <!-- Div to display fetched tenant details -->
+        <div id="tenantDetails"></div>
+        <!-- Form for updating a tenant by ID -->
+        <h2>Update Tenant by ID</h2>
+        <form id="updateTenantForm">
+            <input type="text" name="id" placeholder="Tenant ID" required><br>
+            <input type="text" name="emailAddress" placeholder="New Email Address"><br>
+            <button type="submit">Update Tenant</button>
+        </form>
+        <!-- Form for deleting a tenant by ID -->
+        <h2>Delete Tenant by ID</h2>
+        <form id="deleteTenantForm">
+            <input type="text" name="id" placeholder="Tenant ID" required><br>
+            <button type="submit">Delete Tenant</button>
+        </form>
+    </section>
+    <!-- Section for displaying a table of tenants -->
+    <section>
+        <h3>Tenants List</h3>
+        <!-- Button to refresh the list of tenants -->
+        <button onclick="fetchTenants()">Refresh List</button>
+        <table id="tenantsTable">
+            <tr>
+                <th>Title</th>
+                <th>First Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+            <!-- Tenants will be listed here -->
+        </table>
+    </section>
+
+
+    <!-- Section for managing rental contracts -->
+    <section>
+        <!-- Form for adding a new contract -->
+        <h2>Post Contract</h2>
+        <form id="addContractForm">
+            <!-- Input fields for contract details, all required -->
+            <input type="date" name="contractDate" placeholder="Contract Date (YYYY-MM-DD)" required><br>
+            <input type="text" name="feeMonthly" placeholder="Monthly Fee (e.g., 1000.00)" required><br>
+            <input type="text" name="propertyAddress" placeholder="Property Address" required><br>
+            <input type="text" name="tenants" placeholder="Tenant IDs (comma-separated)" required><br>
+            <input type="text" name="landlord" placeholder="Landlord ID" required><br>
+            <input type="text" name="propertyDoorNumber" placeholder="Property Door Number" required><br>
+            <input type="text" name="contractLength" placeholder="Contract Length (months)" required><br>
+            <input type="text" name="propertyType" placeholder="Property Type" required><br>
+            <!-- Button to submit the form -->
+            <button type="submit">Add Contract</button>
+        </form>
+        <!-- Form for fetching a contract by ID -->
+        <h2>Get Contract by ID</h2>
+        <form id="getContractForm">
+            <input type="text" name="id" placeholder="Enter Contract ID" required><br>
+            <button type="submit">Get Contract</button>
+        </form>
+        <!-- Div to display fetched contract details -->
+        <div id="contractDetails"></div>
+        <!-- Form for updating a contract by ID -->
+        <h2>Update Contract by ID</h2>
+        <form id="updateContractForm">
+            <input type="text" name="id" placeholder="Contract ID" required><br>
+            <input type="text" name="feeMonthly" placeholder="New Monthly Fee"><br>
+            <button type="submit">Update Contract</button>
+        </form>
+        <!-- Form for deleting a contract by ID -->
+        <h2>Delete Contract by ID</h2>
+        <form id="deleteContractForm">
+            <input type="text" name="id" placeholder="Contract ID" required><br>
+            <button type="submit">Delete Contract</button>
+        </form>
+    </section>
+    <!-- Section for displaying a table of contracts -->
+    <section>
+        <h3>Contracts List</h3>
+        <!-- Button to refresh the list of contracts -->
+        <button onclick="fetchContracts()">Refresh List</button>
+        <table id="contractsTable">
+            <tr>
+                <th>Contract Date</th>
+                <th>Monthly Fee</th>
+                <th>Property Address</th>
+                <th>Tenants</th>
+                <th>Landlord ID</th>
+                <th>Details</th>
+            </tr>
+            <!-- Contracts will be listed here -->
+        </table>
+    </section>
+
+
+
+    <!-- JS Code for running MongoDB functions -->
+    <script>
+        // Define the function to fetch landlords and update the UI
+        // Fetch Function first used in Assignment 4 as taken for Fetch Functions to receive Back-End Request in AJAX from https://www.freecodecamp.org/news/how-to-use-fetch-api/ and https://www.turing.com/blog/javascript-fetch-api-guide/
+        function fetchLandlords() {
+            fetch('http://localhost:4000/landlords')
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                const table = document.getElementById('landlordsTable');
+                // Resetting the table to just the headers before adding rows, dynamic functions in forEach innerHTML methods as idealised in https://stackoverflow.com/questions/50384119/need-a-clarification-on-creating-dynamic-html-table-using-js
+                table.innerHTML = `
+                    <tr>
+                        <th>Title</th>
+                        <th>First Name</th>
+                        <th>Surname</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Date of Birth</th>
+                        <th>Permission to Rent</th>
+                        <th>Permission for Email</th>
+                    </tr>
+                `;
+                // Populate the table with data received from the server
+                data.forEach(landlord => {
+                    table.innerHTML += `
+                        <tr>
+                            <td>${landlord.title}</td>
+                            <td>${landlord.firstName}</td>
+                            <td>${landlord.surname}</td>
+                            <td>${landlord.emailAddress}</td>
+                            <td>${landlord.phoneNumber}</td>
+                            <td>${landlord.homeAddress.addressLine1}, ${landlord.homeAddress.town}, ${landlord.homeAddress.countyCity}, ${landlord.homeAddress.eircode}</td>
+                            <td>${new Date(landlord.dateOfBirth).toLocaleDateString()}</td>
+                            <td>${landlord.permissionToRent ? 'Yes' : 'No'}</td>
+                            <td>${landlord.permissionForEmail ? 'Yes' : 'No'}</td>
+                        </tr>
+                    `;
+                });
+            }).catch(error => {
+                console.error('Error fetching landlords:', error);
+            });
+        }
+        // Error was processed in Fetch API in as taken example from https://gist.github.com/odewahn/5a5eeb23279eed6a80d7798fdb47fe91
+
+        // Handling form submission to add a new landlord
+        // Template as modified from https://stackoverflow.com/questions/75052193/form-submits-despite-preventdefault-because-of-a-different-eventlistener and https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault for preventing defaults in submission as validated
+        document.getElementById('addLandlordForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+            const formData = new FormData(this);
+            const data = {
+                title: formData.get('title'),
+                firstName: formData.get('firstName'),
+                surname: formData.get('surname'),
+                phoneNumber: formData.get('phoneNumber'),
+                emailAddress: formData.get('emailAddress'),
+                homeAddress: {
+                    addressLine1: formData.get('addressLine1'),
+                    town: formData.get('town'),
+                    countyCity: formData.get('countyCity'),
+                    eircode: formData.get('eircode')
+                },
+                dateOfBirth: formData.get('dateOfBirth'),
+                permissionToRent: formData.get('permissionToRent') === 'true',
+                permissionForEmail: formData.get('permissionForEmail') === 'true'
+            };
+    
+            // Post request to the server to add a new landlord
+            // Stringify JSON as used in Assignment 4 which was learnt in https://www.w3schools.com/js/js_json_stringify.asp
+            fetch('http://localhost:4000/landlords', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json();
+            }).then(json => {
+                console.log('Success:', json);
+                fetchLandlords(); // Refresh the landlord list after adding a new one
+            }).catch(error => {
+                console.error('Error during fetch:', error);
+            });
+        });
+    
+        // Similar event listeners and handlers in fetching, updating, and deleting landlords, tenants, and contracts
+        // Similar setup for tenants and contracts as seen for landlords above
+        // Fetch tenant/landlord/contract by ID, update their information, or delete them
+        // Forms handle submissions with preventDefault to stop default form submission and instead use fetch API to interact with the server
+
+        // Event listener for fetching a specific landlord by their ID
+    document.getElementById('getLandlordForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const id = this.elements['id'].value;
+        fetch(`http://localhost:4000/landlords/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            const details = document.getElementById('landlordDetails');
+            // Display the fetched landlord details as formatted JSON in the page
+            details.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Failed to fetch landlord:', error));
+    });
+
+    // Event listener for updating landlord information
+    document.getElementById('updateLandlordForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const id = this.elements['id'].value;
+        const emailAddress = this.elements['emailAddress'].value;
+        // PUT request to update the landlord's email address
+        fetch(`http://localhost:4000/landlords/${id}`, {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ emailAddress })
+        })
+        .then(response => response.text())
+        .then(result => {
+            alert('Landlord updated: ' + result); // Alert the user to the update status
+        })
+        .catch(error => console.error('Failed to update landlord:', error));
+    });
+
+    // Event listener for deleting a landlord by their ID
+    document.getElementById('deleteLandlordForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const id = this.elements['id'].value;
+        // DELETE request to remove the landlord
+        fetch(`http://localhost:4000/landlords/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.text())
+        .then(result => {
+            alert('Landlord deleted: ' + result); // Alert the user to the deletion status
+        })
+        .catch(error => console.error('Failed to delete landlord:', error));
+    });
+
+
+
+
+    // Similar functions for managing tenants
+    document.getElementById('addTenantForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const data = {
+            title: formData.get('title'),
+            firstName: formData.get('firstName'),
+            surname: formData.get('surname'),
+            phoneNumber: formData.get('phoneNumber'),
+            emailAddress: formData.get('emailAddress'),
+            homeAddress: {
+                addressLine1: formData.get('addressLine1'),
+                town: formData.get('town'),
+                countyCity: formData.get('countyCity'),
+                eircode: formData.get('eircode')
+            }
+        };
+
+        // Post request to add a new tenant to the server
+        await fetch('http://localhost:4000/tenants', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).catch(error => console.error('Error adding tenant:', error));
+        fetchTenants(); // Refresh the tenants list after adding a new tenant
+    });
+
+    function fetchTenants() {
+        fetch('http://localhost:4000/tenants')
+        .then(response => response.json())
+        .then(data => {
+            const table = document.getElementById('tenantsTable');
+            // Clear the table and set headers before adding new tenant rows
+            table.innerHTML = `
+                <tr>
+                    <th>Title</th>
+                    <th>First Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+            `;
+            // Populate the table with tenant data from the server
+            data.forEach(tenant => {
+                table.innerHTML += `
+                    <tr>
+                        <td>${tenant.title}</td>
+                        <td>${tenant.firstName}</td>
+                        <td>${tenant.surname}</td>
+                        <td>${tenant.emailAddress}</td>
+                        <td>${tenant.phoneNumber}</td>
+                        <td>${tenant.homeAddress.addressLine1}, ${tenant.homeAddress.town}, ${tenant.homeAddress.countyCity}, ${tenant.homeAddress.eircode}</td>
+                    </tr>
+                `;
+            });
+        }).catch(error => console.error('Error fetching tenants:', error));
+    }
+
+    // Event listener for fetching tenant details by ID
+    document.getElementById('getTenantForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const id = this.elements['id'].value;
+        fetch(`http://localhost:4000/tenants/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            const details = document.getElementById('tenantDetails');
+            // Display the fetched tenant details in a formatted manner
+            details.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Failed to fetch tenant:', error));
+    });
+
+    // Continue with event listeners for updating and deleting tenants similar to landlords above
+    document.getElementById('updateTenantForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const id = this.elements['id'].value;
+    const emailAddress = this.elements['emailAddress'].value;
+    fetch(`http://localhost:4000/tenants/${id}`, {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ emailAddress })
+    })
+    .then(response => response.text())
+    .then(result => {
+        alert('Tenant updated: ' + result);
+    })
+    .catch(error => console.error('Failed to update tenant:', error));
+});
+
+document.getElementById('deleteTenantForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const id = this.elements['id'].value;
+    fetch(`http://localhost:4000/tenants/${id}`, {
+        method: 'DELETE'
+    })
+    .then(response => response.text())
+    .then(result => {
+        alert('Tenant deleted: ' + result);
+    })
+    .catch(error => console.error('Failed to delete tenant:', error));
+});
+
+
+
+
+
+    // Event listeners and functions for managing contracts follow a similar pattern to landlords and tenants
+    document.getElementById('addContractForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+        const formData = new FormData(this);
+        const data = {
+            contractDate: formData.get('contractDate'),
+            feeMonthly: formData.get('feeMonthly'),
+            propertyAddress: formData.get('propertyAddress'),
+            tenants: formData.get('tenants').split(','),
+            landlord: formData.get('landlord'),
+            propertyDoorNumber: formData.get('propertyDoorNumber'),
+            contractLength: formData.get('contractLength'),
+            propertyType: formData.get('propertyType')
+        };
+
+        // POST request to add a new contract to the server
+        await fetch('http://localhost:4000/contracts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).catch(error => console.error('Error adding contract:', error));
+        fetchContracts(); // Refresh the contracts list after adding a new one
+    });
+
+    function fetchContracts() {
+        fetch('http://localhost:4000/contracts')
+        .then(response => response.json())
+        .then(data => {
+            const table = document.getElementById('contractsTable');
+            // Clear and re-setup the table headers before adding new rows
+            table.innerHTML = `
+                <tr>
+                    <th>Contract Date</th>
+                    <th>Monthly Fee</th>
+                    <th>Property Address</th>
+                    <th>Tenants</th>
+                    <th>Landlord ID</th>
+                    <th>Details</th>
+                </tr>
+            `;
+            // Populate the table with contract data retrieved from the server
+            data.forEach(contract => {
+                table.innerHTML += `
+                    <tr>
+                        <td>${new Date(contract.contractDate).toLocaleDateString()}</td>
+                        <td>${contract.feeMonthly}</td>
+                        <td>${contract.propertyAddress}</td>
+                        <td>${contract.tenants.join(', ')}</td>
+                        <td>${contract.landlord}</td>
+                        <td>${contract.propertyDoorNumber}, ${contract.contractLength} months, ${contract.propertyType}</td>
+                    </tr>
+                `;
+            });
+        }).catch(error => console.error('Error fetching contracts:', error));
+    }
+
+    // Event listener for fetching contract details by ID
+    document.getElementById('getContractForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const id = this.elements['id'].value;
+        fetch(`http://localhost:4000/contracts/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            const details = document.getElementById('contractDetails');
+            // Display the fetched contract details in a formatted manner
+            details.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Failed to fetch contract:', error));
+    });
+
+    // Event listener for updating a contract by ID
+    document.getElementById('updateContractForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const id = this.elements['id'].value;
+        const feeMonthly = this.elements['feeMonthly'].value;
+        // PUT request to update specific fields of a contract
+        fetch(`http://localhost:4000/contracts/${id}`, {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ feeMonthly })
+        })
+        .then(response => response.text())
+        .then(result => {
+            alert('Contract updated: ' + result); // Inform the user about the update status
+        })
+        .catch(error => console.error('Failed to update contract:', error));
+    });
+
+    // Event listener for deleting a contract by ID
+    document.getElementById('deleteContractForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const id = this.elements['id'].value;
+        // DELETE request to remove the contract
+        fetch(`http://localhost:4000/contracts/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.text())
+        .then(result => {
+            alert('Contract deleted: ' + result); // Notify the user that the contract has been deleted
+        })
+        .catch(error => console.error('Failed to delete contract:', error));
+    });
+</script>
+</body>
+</html>
