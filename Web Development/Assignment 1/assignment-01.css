@@ -1,0 +1,155 @@
+body 
+{
+	background-color: #410000; /* Set Background Page Color */
+}
+
+/* Edit Counters' Style */
+#counter1,
+#counter2,
+#counter3,
+#counter4,
+#counter5,
+#counter6 
+{
+    font-family: Montserrat, sans-serif; /*Edit Font to Montserrat*/
+    font-size: 24px; /* Change font size */
+    color: white; /* Change font color to white */
+    margin-top: 10px;
+	background-color: #4e4e4e; /* Add grey background color around counters */
+    border: 2px solid #cccccc; /* Add grey border around counters */
+    border-radius: 50%; /* Make the border circle */
+    width: 40px; /* Edit width of the counters */
+    height: 40px; /* Edit height of the counters */
+    display: flex;
+    align-items: center; /* Align to center */
+    justify-content: center;
+}
+
+.shape 
+{
+	margin: auto;
+	position: relative; /* Add position relative to the shape container */
+	margin-bottom: relative; /* Add margin between shapes and date input */
+}
+
+.shape h1 
+{
+    position: absolute; /* Set position absolute for the counter */
+    top: 50%; /* Position the counter 50% from the top */
+    left: 50%; /* Position the counter 50% from the left */
+    transform: translate(-50%, 50%); /* Center the counter to the middle of the shapes*/
+}
+
+.shape button 
+{
+    position: absolute;
+    font-size: 14px; /* Edit the font size of the buttons */
+    width: 30px; /* Edit the width of the buttons */
+    height: 30px; /* Edit the height of the buttons */
+    top: calc(50% + 20px); /* Align the buttons vertically with the counters */
+    border-radius: 50%; /* Make the buttons circular */
+    display: none; /* Hide the buttons by default */
+}
+
+.shape:hover button 
+{
+    display: block; /* Display the buttons on hover when near shape shelves */
+}
+
+.shape button:nth-of-type(1) 
+{
+    left: calc(50% - 50px); /* Place the "+" button near with the counters */
+}
+.shape button:nth-of-type(2) 
+{
+    left: calc(50% + 20px); /* Place the "-" button near with the counters */
+}
+
+/* Edit Date Input Method Button */
+input[type="date"] 
+{
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    width: 300px; /* Edit width of the input */
+    height: 50px; /* Edit height of the input */
+    background-color: #187a00; /* Set background color */
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    margin: auto;
+    display: block; /* Make the input a block element */
+}
+
+.change-date-text /* Guide Sign to Change Dates */
+{
+    position: absolute;
+    top: 20px;
+    right: 360px; /* Adjust this value to position the text */
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+  }
+
+/* Edit Shape Shelves */
+.one
+{
+    width: 0;
+    height: 35px;
+    border-left: 35px solid transparent; /* Change triangular shelf border to grey */
+    border-right: 35px solid transparent;
+    border-bottom: 60px solid #ff0202; /* Change shelf color to match pyramid */
+    margin-bottom: 20px; /* Add space between shape one and shape two */
+}
+.two 
+{
+    border-bottom: 75px solid #ff9900;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    height: 0;
+    width: 80px;
+	margin-bottom: 25px; /* Add space between shape two and every other shaped shelves */
+}
+
+/* Rest do similarly */
+.three 
+{
+	border-bottom: 100px solid #cfcc00;
+	border-left: 80px solid transparent;
+	border-right: 80px solid transparent;
+	height: 0;
+	width: 220px;
+}
+.four 
+{
+	border-bottom: 125px solid #0053cf;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	height: 0;
+	width: 380px;
+}
+.five 
+{
+	border-bottom: 150px solid #794f01;
+	border-left: 120px solid transparent;
+	border-right: 120px solid transparent;
+	height: 0;
+	width: 580px;
+}
+.six 
+{
+	border-bottom: 175px solid #1e9700;
+	border-left: 140px solid transparent;
+	border-right: 140px solid transparent;
+	height: 0;
+	width: 820px;
+}
+
+/* Edit Title Details */
+.title 
+{
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 25px;
+}
