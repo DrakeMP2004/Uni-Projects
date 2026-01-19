@@ -1,0 +1,269 @@
+// Datadumps from PhoneStore Database in Cluster0. Collections were done in the MongoDB Shell commands
+// Mongosh MongoDB Shell Link: 
+mongosh "mongodb+srv://cluster0.9uugh8l.mongodb.net/" --apiVersion 1 --username mackenziepascual2023
+
+// Mongosh Password: u230361
+// Then type "use PhoneStore" command to switch to that database
+
+// Collection create command
+// Collection 1: Personal Details  
+db.createCollection("customers")  
+// Collection 2: Item Details  
+db.createCollection("phones")  
+// Collection 3: Order Details  
+db.createCollection("orders") 
+
+// Insert samples layout done in the shell
+// Customers
+db.customers.insertMany([ 
+
+  { 
+
+      "Title": "Mr", 
+
+      "First Name": "Mark", 
+
+      "Surname": "Ready", 
+
+      "Mobile": "123456789", 
+
+      "Email Address": "mark@outlook.com", 
+
+      "Address": { 
+
+          "Address Line 1": "76", 
+
+          "Address Line 2": "Poolpark", 
+
+          "Town": "Maynooth", 
+
+          "County/City": "County", 
+
+          "EIRCODE": "W29V4Z1" 
+
+      }, 
+
+  }, //Add More if wish
+
+]) 
+
+// Phones
+db.phones.insertMany([ 
+
+  { 
+
+    "Manufacturer": "Apple", 
+
+    "Model": "iPhone 15 Pro Max", 
+
+    "Price": 1350 
+
+  }, //Add More if wish
+]); 
+
+//Orders
+db.orders.insertMany([ 
+
+  { 
+
+    "Customer_ID": ObjectId("662423d715cf0f0803fbca9d"), 
+
+    "Items": [ 
+
+      { 
+
+        "Phone_ID": ObjectId("662425e515cf0f0803fbcaa0"), 
+
+        "Quantity": 1 
+
+      }, 
+
+      { 
+
+        "Phone_ID": ObjectId("662425e515cf0f0803fbcaa2"), 
+
+        "Quantity": 1 
+
+      } 
+
+    ] 
+
+  }, //Add More if Wish
+
+]); // This data was changed
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Exported using mongoexport command
+// Customers Collection
+{ "_id" : { "$oid" : "662423d715cf0f0803fbca9d" }, "Title" : "Mr", "First Name" : "Mark", "Surname" : "Ready", "Mobile" : "123456789", "Email Address" : "mark@outlook.com", "Address" : { "Address Line 1" : "76", "Address Line 2" : "Poolpark", "Town" : "Maynooth", "County/City" : "County", "EIRCODE" : "W29V4Z1" } }
+{ "_id" : { "$oid" : "662423d715cf0f0803fbca9e" }, "Title" : "Mr", "First Name" : "Joel", "Surname" : "Luke", "Mobile" : "1357924680", "Email Address" : "joel@gamil.com", "Address" : { "Address Line 1" : "98", "Address Line 2" : "Blackhills", "Town" : "Swords", "County/City" : "City", "EIRCODE" : "W31M2P5" } }
+{ "_id" : { "$oid" : "662423d715cf0f0803fbca9f" }, "Title" : "Dr", "First Name" : "Michelle", "Surname" : "Jackson", "Mobile" : "111222333", "Email Address" : "michelle@gmail.com", "Address" : { "Address Line 1" : "3", "Address Line 2" : "Killaran Hills", "Town" : "Leixlip", "County/City" : "County", "EIRCODE" : "W34Q1R3" } }
+{ "_id" : { "$oid" : "66254b9d1ed0fe9621f7e318" }, "Title" : "Mrs", "First Name" : "Sarah", "Surname" : "Kelly", "Mobile" : "0864213579", "Email Address" : "sarah@gmail.com", "Address" : { "Address Line 1" : "43", "Address Line 2" : "Forestdawn Park", "Town" : "Lucan", "County/City" : "County", "EIRCODE" : "W21O8U2" } }
+{ "_id" : { "$oid" : "66259bf993d8c96ac216806a" }, "Title" : "Dr", "First Name" : "James", "Surname" : "Prowell", "Mobile" : "0864208642", "Email Address" : "james@gmail.com", "Address" : { "Address Line 1" : "45", "Address Line 2" : "Grange Views", "Town" : "Glasnevan", "County/City" : "County", "EIRCODE" : "W09L7H1" } }
+
+// Phones Collection
+{ "_id" : { "$oid" : "662425e515cf0f0803fbcaa0" }, "Manufacturer" : "Apple", "Model" : "iPhone 15 Pro Max", "Price" : 1350 }
+{ "_id" : { "$oid" : "662425e515cf0f0803fbcaa1" }, "Manufacturer" : "Samsung", "Model" : "Galaxy S24 Ultra", "Price" : 1200 }
+{ "_id" : { "$oid" : "662425e515cf0f0803fbcaa2" }, "Manufacturer" : "Samsung", "Model" : "Galaxy S23 Ultra", "Price" : 1000 }
+{ "_id" : { "$oid" : "66254c7bb8ecbb3d58fc0c97" }, "Manufacturer" : "Apple", "Model" : "Iphone 14 Pro Max", "Price" : 1100 }
+{ "_id" : { "$oid" : "66259c6393d8c96ac216806b" }, "Manufacturer" : "Google", "Model" : "Pixel 8 Pro", "Price" : 1100 }
+
+// Orders Collection
+{ "_id" : { "$oid" : "6624289515cf0f0803fbcaa3" }, "Customer_ID" : { "$oid" : "662423d715cf0f0803fbca9d" }, "Items" : [ { "Item_ID" : { "$oid" : "662425e515cf0f0803fbcaa1" }, "Quantity" : 2 } ] }
+{ "_id" : { "$oid" : "662566e843456e2e847ea108" }, "Customer_ID" : { "$oid" : "662423d715cf0f0803fbca9f" }, "Items" : [ { "Item_ID" : { "$oid" : "662425e515cf0f0803fbcaa2" }, "Quantity" : 1 }, { "Item_ID" : { "$oid" : "66254c7bb8ecbb3d58fc0c97" }, "Quantity" : 1 } ] }
+{ "_id" : { "$oid" : "6625677143456e2e847ea109" }, "Customer_ID" : { "$oid" : "662423d715cf0f0803fbca9e" }, "Items" : [ { "Item_ID" : { "$oid" : "662425e515cf0f0803fbcaa1" }, "Quantity" : 1 }, { "Item_ID" : { "$oid" : "662425e515cf0f0803fbcaa0" }, "Quantity" : 1 } ] }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Exported using MongoDB Shell / Studio 3T Commands
+// Customers Collection 
+{
+    "_id" : ObjectId("662423d715cf0f0803fbca9d"),
+    "Title" : "Mr",
+    "First Name" : "Mark",
+    "Surname" : "Ready",
+    "Mobile" : "123456789",
+    "Email Address" : "mark@outlook.com",
+    "Address" : {
+        "Address Line 1" : "76",
+        "Address Line 2" : "Poolpark",
+        "Town" : "Maynooth",
+        "County/City" : "County",
+        "EIRCODE" : "W29V4Z1"
+    }
+}
+{
+    "_id" : ObjectId("662423d715cf0f0803fbca9e"),
+    "Title" : "Mr",
+    "First Name" : "Joel",
+    "Surname" : "Luke",
+    "Mobile" : "1357924680",
+    "Email Address" : "joel@gamil.com",
+    "Address" : {
+        "Address Line 1" : "98",
+        "Address Line 2" : "Blackhills",
+        "Town" : "Swords",
+        "County/City" : "City",
+        "EIRCODE" : "W31M2P5"
+    }
+}
+{
+    "_id" : ObjectId("662423d715cf0f0803fbca9f"),
+    "Title" : "Dr",
+    "First Name" : "Michelle",
+    "Surname" : "Jackson",
+    "Mobile" : "111222333",
+    "Email Address" : "michelle@gmail.com",
+    "Address" : {
+        "Address Line 1" : "3",
+        "Address Line 2" : "Killaran Hills",
+        "Town" : "Leixlip",
+        "County/City" : "County",
+        "EIRCODE" : "W34Q1R3"
+    }
+}
+{
+    "_id" : ObjectId("66254b9d1ed0fe9621f7e318"),
+    "Title" : "Mrs",
+    "First Name" : "Sarah",
+    "Surname" : "Kelly",
+    "Mobile" : "0864213579",
+    "Email Address" : "sarah@gmail.com",
+    "Address" : {
+        "Address Line 1" : "43",
+        "Address Line 2" : "Forestdawn Park",
+        "Town" : "Lucan",
+        "County/City" : "County",
+        "EIRCODE" : "W21O8U2"
+    }
+}
+{
+    "_id" : ObjectId("66259bf993d8c96ac216806a"),
+    "Title" : "Dr",
+    "First Name" : "James",
+    "Surname" : "Prowell",
+    "Mobile" : "0864208642",
+    "Email Address" : "james@gmail.com",
+    "Address" : {
+        "Address Line 1" : "45",
+        "Address Line 2" : "Grange Views",
+        "Town" : "Glasnevan",
+        "County/City" : "County",
+        "EIRCODE" : "W09L7H1"
+    }
+}
+
+
+// Phones Collection
+{
+    "_id" : ObjectId("662425e515cf0f0803fbcaa0"),
+    "Manufacturer" : "Apple",
+    "Model" : "iPhone 15 Pro Max",
+    "Price" : NumberInt(1350)
+}
+{
+    "_id" : ObjectId("662425e515cf0f0803fbcaa1"),
+    "Manufacturer" : "Samsung",
+    "Model" : "Galaxy S24 Ultra",
+    "Price" : NumberInt(1200)
+}
+{
+    "_id" : ObjectId("662425e515cf0f0803fbcaa2"),
+    "Manufacturer" : "Samsung",
+    "Model" : "Galaxy S23 Ultra",
+    "Price" : NumberInt(1000)
+}
+{
+    "_id" : ObjectId("66254c7bb8ecbb3d58fc0c97"),
+    "Manufacturer" : "Apple",
+    "Model" : "Iphone 14 Pro Max",
+    "Price" : NumberInt(1100)
+}
+{
+    "_id" : ObjectId("66259c6393d8c96ac216806b"),
+    "Manufacturer" : "Google",
+    "Model" : "Pixel 8 Pro",
+    "Price" : NumberInt(1100)
+}
+
+
+// Orders Collection
+{
+    "_id" : ObjectId("6624289515cf0f0803fbcaa3"),
+    "Customer_ID" : ObjectId("662423d715cf0f0803fbca9d"),
+    "Items" : [
+        {
+            "Item_ID" : ObjectId("662425e515cf0f0803fbcaa1"),
+            "Quantity" : NumberInt(2)
+        }
+    ]
+}
+{
+    "_id" : ObjectId("662566e843456e2e847ea108"),
+    "Customer_ID" : ObjectId("662423d715cf0f0803fbca9f"),
+    "Items" : [
+        {
+            "Item_ID" : ObjectId("662425e515cf0f0803fbcaa2"),
+            "Quantity" : NumberInt(1)
+        },
+        {
+            "Item_ID" : ObjectId("66254c7bb8ecbb3d58fc0c97"),
+            "Quantity" : NumberInt(1)
+        }
+    ]
+}
+{
+    "_id" : ObjectId("6625677143456e2e847ea109"),
+    "Customer_ID" : ObjectId("662423d715cf0f0803fbca9e"),
+    "Items" : [
+        {
+            "Item_ID" : ObjectId("662425e515cf0f0803fbcaa1"),
+            "Quantity" : NumberInt(1)
+        },
+        {
+            "Item_ID" : ObjectId("662425e515cf0f0803fbcaa0"),
+            "Quantity" : NumberInt(1)
+        }
+    ]
+}

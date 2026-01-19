@@ -1,0 +1,17 @@
+{
+  "name": "assignment-05-22518529",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assignment-05-nodejs.js",
+  "scripts": {
+    "start": "nodemon assignment-05-nodejs.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.3.2",
+    "nodemon": "^3.1.0"
+  }
+}
