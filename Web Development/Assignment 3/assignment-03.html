@@ -1,0 +1,170 @@
+<!-- Template -->
+<!-- Took based from https://www.geeksforgeeks.org/how-to-add-edit-and-delete-data-in-html-table-using-javascript/-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment-3</title>
+    <link rel="stylesheet" href="assignment-03.css">
+</head>
+<body>
+    <!-- Title -->
+    <div class="title">
+        <h2>Student Grades Table</h2>
+    </div>
+    <!-- Create container for putting a new assignment column -->
+    <div id="formContainer">
+        <label for="newAssignmentTitle">New Assignment Title:</label>
+        <input type="text" id="newAssignmentTitle">
+        <button onclick="addColumnAssignments()">Add Assignment Column</button>
+    </div>
+
+    <!-- Table for displaying student grades -->
+    <table border="2" cellpadding="5" cellspacing="5" id="marksTable">
+        <!-- Table header row -->
+        <!-- Taken from https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table6 -->
+        <tr>
+            <th>Student Name</th>
+            <th>Student ID</th>
+            <th>Assignment 1</th>
+            <th>Assignment 2</th>
+            <th>Assignment 3</th>
+            <th>Assignment 4</th>
+            <th>Assignment 5</th>
+
+            <!-- Last column for average percentage or grade representation -->
+            <th><button onclick="switchGradeConversions()">Average (%)</button></th>
+        </tr>
+
+        <!-- Default rows for students, additional rows can be dynamically added -->
+        <!-- Each row represents a student -->
+
+        <tr>
+            <!-- Row cells for student name, ID, and assignment grades -->
+            <!-- "contenteditable" taken from https://www.w3schools.com/tags/att_global_contenteditable.asp -->
+            <td contenteditable="true">Joe Bloggs</td>
+            <td contenteditable="true">123456789</td>
+
+            <!-- Cells for assignment grades, initially (-) -->
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+
+            <!-- Final cell for displaying average percentage or grade -->
+            <td></td>
+        </tr>
+        <!-- Additional default rows -->
+        <!-- Repeat the above row structure for other default students -->
+        <tr>
+            <td contenteditable="true">Jim Bloggs</td>
+            <td contenteditable="true">987564321</td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td></td>
+        
+        <tr>
+            <td contenteditable="true">Krish Rajo</td>
+            <td contenteditable="true">5555555555</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td></td>
+
+        <tr>
+            <td contenteditable="true">Charlse Mason</td>
+            <td contenteditable="true">1234512345</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td></td>
+        
+        <tr>
+            <td contenteditable="true">Maria Amber</td>
+            <td contenteditable="true">9999977765</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td></td>
+        
+        <tr>
+            <td contenteditable="true">Sonny Kristofer</td>
+            <td contenteditable="true">0864297531</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td></td>
+        
+        <tr>
+            <td contenteditable="true">Sarah Alex</td>
+            <td contenteditable="true">555555555</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td></td>
+        
+        <tr>
+            <td contenteditable="true">Jack Mons</td>
+            <td contenteditable="true">0808090909</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td></td>
+        
+        <tr>
+            <td contenteditable="true">John Lockwood</td>
+            <td contenteditable="true">5555566789</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td></td>
+        
+        <tr>
+            <td contenteditable="true">Kieran Marson</td>
+            <td contenteditable="true">0808945455</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td contenteditable="true">-</td>
+            <td></td>
+    </table>
+
+    <!-- Button for adding a new student row -->
+    <button onclick="addRowStudents()">Add Student</button>
+
+    <!-- Display for total number of unsubmitted assignments -->
+    <div id="unsubmittedInfo">Unsubmitted Assignments: </div>
+
+    <script src="assignment-03.js"></script>
+</body>
+</html>
+
+
+
+
+
+ <!-- 
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table6
+https://www.w3schools.com/jsreF/tryit.asp?filename=tryjsref_table_insertrow
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tr_insertcell2
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_prompt
+https://www.geeksforgeeks.org/design-a-student-grade-calculator-using-javascript/
+ -->

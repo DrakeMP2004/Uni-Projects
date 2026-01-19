@@ -1,0 +1,125 @@
+/* Stylings inspired from https://www.geeksforgeeks.org/how-to-add-edit-and-delete-data-in-html-table-using-javascript/ */
+
+/* Styling for the body */
+body {
+    font-family: sans-serif; /* Sans-Serif Font */
+    margin: 4rem; /* Added margin for spacing */
+    background-color: goldenrod;
+}
+
+/* Styling for the title section */
+.title {
+    text-align: center; 
+    margin-top: 100px;
+    color: black;
+    font-size: 30px;
+}
+
+/* Styling for the form container */
+#formContainer {
+    margin-bottom: 20px;
+}
+
+/* Styling for labels, inputs, and textarea */
+label {
+    display: block; /* Display block for labels */
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 300px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Styling for buttons */
+button {
+    margin: 10px;
+    padding: 8px 16px;
+    background-color: darkgray;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Hover styling for buttons */
+button:hover {
+    background-color: darkred;
+}
+
+/* Styling for the table */
+table {
+    border-collapse: collapse; /* Collapse table borders */
+    margin-bottom: 20px; /* Bottom margin for spacing */
+    width: 100%; /* Full width */
+}
+
+/* Styling for table headers and cells */
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Styling for table headers */
+th {
+    background-color: darkgray;
+    color: black;
+    text-align: center;
+}
+
+/* Styling for alternating row colors */
+/* Child functions took from https://www.w3schools.com/cssref/tryit.php?filename=trycss3_nth-child for each row cells */
+tr:nth-child(odd) {
+    background-color: #eee; /* Background color for odd rows */
+}
+
+tr:nth-child(even) {
+    background-color: #fff; /* Background color for even rows */
+}
+
+/* Styling for left-aligned student names and IDs */
+td:first-child,
+td:nth-child(2) {
+    text-align: left;
+}
+
+/* Styling for right-aligned numbers in assignment columns */
+td:nth-child(n+3):not(:last-child) {
+    text-align: right;
+}
+
+/* Styling for cells containing "-" in assignment columns */
+td:nth-child(n+3):not(:last-child):empty::before {
+    content: "-"; /* Display "-" */
+    display: inline-block; /* Display as inline block */
+    width: 100%; /* Full width */
+    text-align: center; /* Center align text */
+}
+
+/* Styling for right-aligned cells in the "Average %" column */
+td:last-child {
+    text-align: right;
+}
+
+/* Styling for unsubmitted assignments */
+.unsubmitted {
+    background-color: yellow;
+}
+
+/* Styling for grades below 60% */
+.below-60 {
+    color: white; /* Text color */
+    background-color: red;
+}
+
+/* Styling for the display of total number of unsubmitted assignments */
+#unsubmittedInfo {
+    font-size: 20px;
+    color: black;
+}
