@@ -1,0 +1,18 @@
+# In the glass bridge challenge in Squid Game there are n contestants 
+who have to cross a glass bridge in order, according to their number. 
+# There are 17 jump choices to be made to get across the bridge. A 
+contestant can choose to either jump to the left or to the right. 
+# Unknown to the participants, one side will collapse under their 
+weight and lead to their elimination, while the other side is correct. 
+# Participants have to be successful with a 50/50 guess to progress 
+another step forwards and there are 17 steps in total. 
+
+# Assume that every time any player makes a jump from any position 
+into any other position, they have a 1% chance of just falling off the 
+bridge by accident. Thus, nobody ever has a 100% chance of making 
+it across. 
+# Write a Monte Carlo simulation that calculates the % chance, to the 
+nearest percent, that player n will survive. For example, when n is 5 
+then the answer is 2%, because the 5th player has a 2% chance of 
+surviving. The Monte Carlo simulation should take one parameter, 
+namely n.
