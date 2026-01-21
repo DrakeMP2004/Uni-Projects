@@ -23,25 +23,6 @@ I enjoy building practical applications and problem-solving research that combin
 
 ---
 
-## 🚀 Featured Projects
-Here are a few categories of projects I’ve built through school + personal learning:
-
-### 🌐 Web Development
-- **Housing Database System (Exam Project)**  
-  Built a structured database-driven system with clear CRUD-style logic and data handling.
-
-### ⚛️ React Front-End Development
-- **Patient Registration Page**  
-  A responsive React interface focused on clean layouts, form handling, and usability.
-
-### ☕ Java Projects
-- **Maze Escapes Problem**  
-  Algorithmic problem-solving project demonstrating logic, structure, and implementation.
-
-### 🧩 Software Engineering & Processes
-- Academic work demonstrating engineering practices like planning, documentation, and structured development.
-
----
 
 ## 📈 What I'm Working On Right Now
 - Improving React project structure (components, reusability, folder architecture)
