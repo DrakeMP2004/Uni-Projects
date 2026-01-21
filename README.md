@@ -1,5 +1,7 @@
 # Personal + University Projects
 
+<img width="1920" height="800" alt="image" src="https://github.com/user-attachments/assets/6df16c6b-57e9-4a2c-b494-06f885244809" />
+
 <h1 align="center">Hi, I'm Mackenzie Pascual 👋</h1>
 <h3 align="center">Computer Science Student | Internship-Seeking | Software Engineering • Web Dev • UI/UX</h3>
 ---
