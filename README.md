@@ -41,8 +41,6 @@ Here are a few categories of projects I’ve built through school + personal lea
 ### 🧩 Software Engineering & Processes
 - Academic work demonstrating engineering practices like planning, documentation, and structured development.
 
-📌 **Repo:** [Personal + University Projects](https://github.com/YOUR_GITHUB_USERNAME/Personal-Uni-Projects)
-
 ---
 
 ## 📈 What I'm Working On Right Now
