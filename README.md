@@ -2,13 +2,6 @@
 
 <h1 align="center">Hi, I'm Mackenzie Pascual 👋</h1>
 <h3 align="center">Computer Science Student | Internship-Seeking | Software Engineering • Web Dev • UI/UX</h3>
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin"></a>
-  <a href="mailto:YOUR_EMAIL@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-Reach%20Me-red?style=flat&logo=gmail"></a>
-  <a href="https://github.com/YOUR_GITHUB_USERNAME"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-Portfolio-black?style=flat&logo=github"></a>
-</p>
-
 ---
 
 ## 👨‍💻 About Me
