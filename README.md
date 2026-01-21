@@ -8,7 +8,7 @@
 I'm a 3rd year **Bachelor’s Computer Science student** from Maynooth University actively looking for an internship.  
 I enjoy building practical applications and problem-solving research that combine **clean code, good design, and real-world usability**.
 
-- 🎯 Currently focused on: **React, Java, Web Development, and Software Engineering fundamentals**
+- 🎯 Currently focused on: **React, UI/UX Design, Web Development, and Software Engineering fundamentals**
 - 🧠 Interested in: **Frontend Engineering, Full-Stack Development, UI/UX, and Systems**
 - ✅ Goal: contribute to real teams, ship real features, and grow fast in industry
 
