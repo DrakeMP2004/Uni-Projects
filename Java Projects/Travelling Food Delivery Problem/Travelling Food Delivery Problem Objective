@@ -1,11 +1,13 @@
-It’s the year 2026 and unfortunately GPT v7 has replaced all programming jobs, 
+# It’s the year 2026 and unfortunately GPT v7 has replaced all programming jobs, 
 meaning that you’re left with food delivery.  
-However, you can still see a way to put your Computer Science degree to good 
+# However, you can still see a way to put your Computer Science degree to good 
 use, by using your skills to optimize your route. The extra income earned will 
 help pay for a takeaway. 
-There are 100 houses in Maynooth waiting for a pizza. The distance in metres 
+# There are 100 houses in Maynooth waiting for a pizza. The distance in metres 
 between each house and every other house is shown in deliveries.csv. 
-Find a route that gets you from Apache Pizza to every other house and then 
+
+# Find a route that gets you from Apache Pizza to every other house and then 
 back to Apache Pizza for your next delivery load.  
-Keep track of the total distance travelled and print it out. 
+
+# Keep track of the total distance travelled and print it out. 
 How low can you get the distance travelled? 
