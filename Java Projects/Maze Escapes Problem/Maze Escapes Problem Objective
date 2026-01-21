@@ -1,0 +1,18 @@
+# The goal is to escape from the maze. There are 5 mazes 
+provided that you can test your algorithm on. 
+# You are allowed 200 moves in the maze before you die. You will 
+appear at some point in the maze but you don't know where. Each 
+maze has exactly one exit.  
+# Each maze is a 20x20 grid consisting of walls and spaces. The main 
+method that reads in the data is provided (see Lab10 code below). 
+The input reads in the maze structure from a series of 20 Strings, 
+followed by two int co-ordinates, giving your X and Y positions in the 
+20x20 maze.  
+
+# All you need to do is complete the getMove() method, which takes in 
+4 booleans representing if it's possible to move north, south, east 
+and west (true means you can, false means there's a wall). 
+# The program will print out the maze every time you make a step and 
+then pause for 100ms. If you move into a wall, nothing happens but 
+you lose a life. The program will terminate if you find the exit or lose 
+all your lives.
