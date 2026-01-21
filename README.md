@@ -1,6 +1,6 @@
 # Personal + University Projects
 
-<h1 align="center">Hi, I'm Mack Pascual 👋</h1>
+<h1 align="center">Hi, I'm Mackenzie Pascual 👋</h1>
 <h3 align="center">Computer Science Student | Internship-Seeking | Software Engineering • Web Dev • UI/UX</h3>
 
 <p align="center">
@@ -12,8 +12,8 @@
 ---
 
 ## 👨‍💻 About Me
-I'm a **Bachelor’s Computer Science student** actively looking for a **Software Engineering / Web Development Internship**.  
-I enjoy building practical applications that combine **clean code, good design, and real-world usability**.
+I'm a 3rd year **Bachelor’s Computer Science student** from Maynooth University actively looking for an internship.  
+I enjoy building practical applications and problem-solving research that combine **clean code, good design, and real-world usability**.
 
 - 🎯 Currently focused on: **React, Java, Web Development, and Software Engineering fundamentals**
 - 🧠 Interested in: **Frontend Engineering, Full-Stack Development, UI/UX, and Systems**
@@ -22,9 +22,9 @@ I enjoy building practical applications that combine **clean code, good design, 
 ---
 
 ## 🧰 Technical Skills
-**Languages:** Java, JavaScript, TypeScript, SQL  
+**Languages:** Java, JavaScript, SQL  
 **Frontend:** React, HTML5, CSS3  
-**Tools & Workflow:** Git/GitHub, VS Code, npm  
+**Tools & Workflow:** Git/GitHub, VS Code, npm, Figma  
 **Concepts:** OOP, Data Structures & Algorithms, SDLC, Agile basics  
 **Design:** UI/UX fundamentals, prototyping & iteration  
 
@@ -61,17 +61,18 @@ Here are a few categories of projects I’ve built through school + personal lea
 
 ## 🤝 What I’m Looking For
 ✅ **Internship roles** in:
-- Software Engineering Intern
+- UI/UX Intern
 - Frontend / Full-Stack Intern
 - Web Development Intern
+- IT Support Intern
 
 I’m eager to contribute to a team where I can learn quickly and build production-quality software.
 
 ---
 
 ## 📬 Contact
-- LinkedIn: https://www.linkedin.com/in/YOUR-LINKEDIN/
-- Email: YOUR_EMAIL@gmail.com
+- LinkedIn: www.linkedin.com/in/mackenzie-pascual
+- Email: mackenzie.pascual.2023@mumail.ie
 
 ---
 
