@@ -1,1 +1,79 @@
 # Personal + University Projects
+
+<h1 align="center">Hi, I'm Mack Pascual 👋</h1>
+<h3 align="center">Computer Science Student | Internship-Seeking | Software Engineering • Web Dev • UI/UX</h3>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin"></a>
+  <a href="mailto:YOUR_EMAIL@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-Reach%20Me-red?style=flat&logo=gmail"></a>
+  <a href="https://github.com/YOUR_GITHUB_USERNAME"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-Portfolio-black?style=flat&logo=github"></a>
+</p>
+
+---
+
+## 👨‍💻 About Me
+I'm a **Bachelor’s Computer Science student** actively looking for a **Software Engineering / Web Development Internship**.  
+I enjoy building practical applications that combine **clean code, good design, and real-world usability**.
+
+- 🎯 Currently focused on: **React, Java, Web Development, and Software Engineering fundamentals**
+- 🧠 Interested in: **Frontend Engineering, Full-Stack Development, UI/UX, and Systems**
+- ✅ Goal: contribute to real teams, ship real features, and grow fast in industry
+
+---
+
+## 🧰 Technical Skills
+**Languages:** Java, JavaScript, TypeScript, SQL  
+**Frontend:** React, HTML5, CSS3  
+**Tools & Workflow:** Git/GitHub, VS Code, npm  
+**Concepts:** OOP, Data Structures & Algorithms, SDLC, Agile basics  
+**Design:** UI/UX fundamentals, prototyping & iteration  
+
+---
+
+## 🚀 Featured Projects
+Here are a few categories of projects I’ve built through school + personal learning:
+
+### 🌐 Web Development
+- **Housing Database System (Exam Project)**  
+  Built a structured database-driven system with clear CRUD-style logic and data handling.
+
+### ⚛️ React Front-End Development
+- **Patient Registration Page**  
+  A responsive React interface focused on clean layouts, form handling, and usability.
+
+### ☕ Java Projects
+- **Maze Escapes Problem**  
+  Algorithmic problem-solving project demonstrating logic, structure, and implementation.
+
+### 🧩 Software Engineering & Processes
+- Academic work demonstrating engineering practices like planning, documentation, and structured development.
+
+📌 **Repo:** [Personal + University Projects](https://github.com/YOUR_GITHUB_USERNAME/Personal-Uni-Projects)
+
+---
+
+## 📈 What I'm Working On Right Now
+- Improving React project structure (components, reusability, folder architecture)
+- Building stronger backend fundamentals (APIs + databases)
+- Practicing coding interview patterns (arrays, hashing, recursion, OOP)
+
+---
+
+## 🤝 What I’m Looking For
+✅ **Internship roles** in:
+- Software Engineering Intern
+- Frontend / Full-Stack Intern
+- Web Development Intern
+
+I’m eager to contribute to a team where I can learn quickly and build production-quality software.
+
+---
+
+## 📬 Contact
+- LinkedIn: https://www.linkedin.com/in/YOUR-LINKEDIN/
+- Email: YOUR_EMAIL@gmail.com
+
+---
+
+⭐ If you’re a recruiter or engineer reviewing my profile, thank you for your time —  
+I’d love to connect and learn about internship opportunities!
