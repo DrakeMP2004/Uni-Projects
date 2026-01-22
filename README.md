@@ -10,8 +10,8 @@
 I'm a 3rd year **Bachelor’s Computer Science student** from Maynooth University actively looking for an internship.  
 I enjoy building practical applications and problem-solving research that combine **clean code, good design, and real-world usability**.
 
-- 🎯 Currently focused on: **React, UI/UX Design, Web Development, and Software Engineering fundamentals**
-- 🧠 Interested in: **Frontend Engineering, Full-Stack Development, UI/UX, and Systems**
+- 🎯 Currently focused on: **UI/UX Design, Web Development, Database Design and Software Engineering fundamentals**
+- 🧠 Interested in: **Frontend Engineering, UI/UX, and Information Technology**
 - ✅ Goal: contribute to real teams, ship real features, and grow fast in industry
 
 ---
@@ -19,7 +19,7 @@ I enjoy building practical applications and problem-solving research that combin
 ## 🧰 Technical Skills
 **Languages:** Java, JavaScript, SQL  
 **Frontend:** React, HTML5, CSS3  
-**Tools & Workflow:** Git/GitHub, VS Code, npm, Figma  
+**Tools & Workflow:** Git/GitHub, VS Code, Microsoft Excel, npm, Figma  
 **Concepts:** OOP, Data Structures & Algorithms, SDLC, Agile basics  
 **Design:** UI/UX fundamentals, prototyping & iteration  
 
@@ -27,15 +27,17 @@ I enjoy building practical applications and problem-solving research that combin
 
 
 ## 📈 What I'm Working On Right Now
+- Relearn basic IT practicals
 - Improving React project structure (components, reusability, folder architecture)
 - Building stronger backend fundamentals (APIs + databases)
+- Setting up more UI Prototypes for finalising in Figma Design
 - Practicing coding interview patterns (arrays, hashing, recursion, OOP)
 
 ---
 
 ## 🤝 What I’m Looking For
 ✅ **Internship roles** in:
-- UI/UX Intern
+- UI/UX Design Intern
 - Frontend / Full-Stack Intern
 - Web Development Intern
 - IT Support Intern
