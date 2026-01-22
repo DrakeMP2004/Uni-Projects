@@ -4,6 +4,7 @@
 
 <h1 align="center">Hi, I'm Mackenzie Pascual 👋</h1>
 <h3 align="center">Computer Science Student | Internship-Seeking </h3>
+
 ---
 
 ## 👨‍💻 About Me
