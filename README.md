@@ -43,7 +43,7 @@ I enjoy building practical applications and problem-solving research that combin
 - Web Development Intern
 - IT Support Intern
 
-I’m eager to contribute to a team where I can learn quickly and build production-quality software.
+I’m eager to contribute to a team where I can learn quickly and build quality services.
 
 ---
 
