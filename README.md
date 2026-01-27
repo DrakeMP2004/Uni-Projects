@@ -12,20 +12,20 @@ I'm a 3rd year **Bachelor’s Computer Science student** from Maynooth Universit
 I enjoy building practical applications and problem-solving research that combine **clean code, good design, and real-world usability**.
 
 - 🎯 Currently focused on: **UI/UX Design, Web Development, Database Design and Software Engineering fundamentals**
-- 🧠 Interested in: **Frontend Engineering, UI/UX, and Information Technology**
+- 🧠 Interested in: **Frontend Engineering, UI/UX, Data and Information Technology**
 - ✅ Goal: contribute to real teams, ship real features, and grow fast in industry
 
 ---
 
 ## 🧰 Technical Skills
-**Languages:** Java, JavaScript, SQL  
+**Operating Systems:** Windows 11/10, Linux (Ubuntu and Steam OS)
+**Languages:** Java, JavaScript, C++, SQL  
 **Frontend:** React, HTML5, CSS3  
-**Tools & Workflow:** Git/GitHub, VS Code, Microsoft Excel, npm, Figma  
+**Tools & Workflow:** Git/GitHub, VS Code, Microsoft Excel, Power BI, MongoDB Atlas, PostgreSQL, MySQL, Figma, Mira  
 **Concepts:** OOP, Data Structures & Algorithms, SDLC, Agile basics  
 **Design:** UI/UX fundamentals, prototyping & iteration  
 
 ---
-
 
 ## 📈 What I'm Working On Right Now
 - Relearn basic IT practicals
@@ -41,7 +41,8 @@ I enjoy building practical applications and problem-solving research that combin
 - UI/UX Design Intern
 - Frontend / Full-Stack Intern
 - Web Development Intern
-- IT Support Intern
+- IT Intern
+- Data Analyst Intern
 
 I’m eager to contribute to a team where I can learn quickly and build quality services.
 
